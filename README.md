@@ -26,15 +26,18 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 
 1. Under "File" > "Data Sources...", first create a new Driver. 
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-driver.png)
+![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/driver_conf_masked.png)
 
 2. Then create a new Project Data Source using the new Driver.
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection.png)
+![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_1_masked.png)
 
-3. After creating the Project Data Source, test the connection.  You should see the following:
+3. Then change advanced option for new Data Source.
+![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_2_masked.png)
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection-test.png)
+4. After creating the Project Data Source, test the connection.  You should see the following:
+
+![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_3_masked.png)
 
 ## How to Build
 To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
