@@ -24,7 +24,8 @@ mvn -version
 ## IntelliJ Data Grip (2016.3.1 version)
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
 
-1. Under "File" > "Data Sources...", first create a new Driver. 
+1. Under "File" > "Data Sources...", first create a new Driver called Hive. 
+Default url template is as follows: "jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]" 
 
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/driver_conf_masked.png)
 
@@ -32,7 +33,7 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_1_masked.png)
 
-3. Then change advanced option for new Data Source.
+3. Then change jvm advanced option ("-Dsun.security.krb5.debug=true -Djavax.security.auth.useSubjectCredsOnly=false") for new Data Source.
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_2_masked.png)
 
 4. After creating the Project Data Source, test the connection.  You should see the following:
