@@ -27,7 +27,6 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 1. Under "File" > "Data Sources...", first create a new Driver called Hive. 
 Default url template is as follows: "jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]"
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/driver_conf_masked.png)
-
 2. Then create a new Project Data Source using the new Driver. You have to specify hostname of hive server, database name and default URL. For cloudera cluster with Kerberos and SASL it is as follows:
 ```
 jdbc:hive2://hostname:10000/default;principal=hive/hostname@REALM;saslQop=auth-conf
@@ -38,9 +37,7 @@ jdbc:hive2://hostname:10000/default;principal=hive/hostname@REALM;saslQop=auth-c
 -Dsun.security.krb5.debug=true -Djavax.security.auth.useSubjectCredsOnly=false"
 ```
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_2_masked.png)
-
 4. After creating the Project Data Source, test the connection.  You should see the following:
-
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_3_masked.png)
 
 ## How to Build
