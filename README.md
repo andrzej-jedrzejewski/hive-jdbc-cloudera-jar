@@ -25,14 +25,16 @@ mvn -version
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
 
 1. Under "File" > "Data Sources...", first create a new Driver called Hive. 
-Default url template is as follows: "jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]" 
+Default url template is as follows: "jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]"
 
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/driver_conf_masked.png)
 
 2. Then create a new Project Data Source using the new Driver. You have to specify hostname of hive server, database name and default URL. For cloudera cluster with Kerberos and SASL it is as follows:
-```jdbc:hive2://hostname:10000/default;principal=hive/hostname@REALM;saslQop=auth-conf```
 
-![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_1_masked.png)```
+jdbc:hive2://hostname:10000/default;principal=hive/hostname@REALM;saslQop=auth-conf
+
+
+![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_1_masked.png)
 
 3. Then change jvm advanced option ("-Dsun.security.krb5.debug=true -Djavax.security.auth.useSubjectCredsOnly=false") for new Data Source.
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_2_masked.png)
