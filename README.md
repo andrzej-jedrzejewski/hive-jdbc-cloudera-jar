@@ -21,6 +21,8 @@ TO verify maven installation just run in command line:
 mvn -version
 ```
 
+hive-jdbc-cloudera-2.5.3.0-37.jar
+
 ## IntelliJ Data Grip (2016.3.1 version)
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
 
@@ -30,7 +32,7 @@ Default url template is as follows:
 jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]
 ```
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/driver_conf_masked.png)
-2. Then create a new Project Data Source using the new Driver. You have to specify hostname of hive server, database name and default URL. For cloudera cluster with Kerberos and SASL it is as follows:
+2. Then create a new Project Data Source using the new Driver. You have to specify hostname of hive server, port, database name and default URL. For cloudera cluster with Kerberos and SASL it is as follows:
 ```
 jdbc:hive2://hostname:10000/default;principal=hive/hostname@REALM;saslQop=auth-conf
 ```
