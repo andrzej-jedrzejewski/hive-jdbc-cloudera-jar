@@ -33,8 +33,10 @@ Default url template is as follows: "jdbc:hive2://{host}:{port}/{database}[;<;,{
 jdbc:hive2://hostname:10000/default;principal=hive/hostname@REALM;saslQop=auth-conf
 ```
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_1_masked.png)
-
-3. Then change jvm advanced option ("-Dsun.security.krb5.debug=true -Djavax.security.auth.useSubjectCredsOnly=false") for new Data Source.
+3. Then change jvm advanced option for new Data Source.
+```
+-Dsun.security.krb5.debug=true -Djavax.security.auth.useSubjectCredsOnly=false"
+```
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_2_masked.png)
 
 4. After creating the Project Data Source, test the connection.  You should see the following:
