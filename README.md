@@ -7,7 +7,7 @@ If you need more information about Hiver Server please check:
 To run maven you need java. I was using JDK-8u60. Be sure that "JAVA_HOME" environment varialbe is set up coretly and points to your JDK installation. 
 
 
-To use this project you have to install [Apache Maven]{https://kainossoftwareltd-my.sharepoint.com/personal/andrzejj_kainos_com/_layouts/15/guestaccess.aspx?docid=08fc5916c169d4d75bbb0d6cefb8d6fbe&authkey=AebWILMYi-f8BGdIKsJHYBQ&expiration=2017-01-27T23:23:18.000Z}. I used version 3.3.9 during testing. For windows after maven installation you have to add two evironment variables:
+To use this project you have to install [Apache Maven](https://maven.apache.org/download.cgi). I used version 3.3.9 during testing. For windows after maven installation you have to add two evironment variables:
 ```
 M2_HOME=C:\PathToMavenDir
 MAVEN_HOME=C:\PathToMavenDir
@@ -21,7 +21,7 @@ TO verify maven installation just run in command line:
 mvn -version
 ```
 
-hive-jdbc-cloudera-2.5.3.0-37.jar
+/target/hive-jdbc-cloudera-2.5.3.0-37.jar
 
 ## IntelliJ Data Grip (2016.3.1 version)
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
