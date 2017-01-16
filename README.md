@@ -46,4 +46,4 @@ jdbc:hive2://hostname:10000/default;principal=hive/hostname@REALM;saslQop=auth-c
 ![](https://github.com/andrzej-jedrzejewski/hive-jdbc-cloudera-jar/blob/master/images/data_source_conf_3_masked.png)
 
 ## How to Build
-To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
+To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn package`.  A file called `target\hive-jdbc-cloudera.jar` will be created. The newly created jar will contain all dependencies and driver as well.
