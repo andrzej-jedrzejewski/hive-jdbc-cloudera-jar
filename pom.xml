@@ -12,25 +12,21 @@
     <name>Hive JDBC Cloudera jar</name>
     <description>Hive JDBC Cloudera jar</description>
 
-    <properties>
+     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hive.version>1.2.1000.2.5.3.0-37</hive.version>
-        <hadoop.version>2.7.3.2.5.3.0-37</hadoop.version>
+        <hive.version>1.1.0-cdh5.7.4</hive.version>
+        <hadoop.version>2.6.0-cdh5.7.4</hadoop.version>
         <slf4j.version>1.7.21</slf4j.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>hwx-releases</id>
-            <url>http://repo.hortonworks.com/content/repositories/releases/</url>
-        </repository>
-        <repository>
-            <id>hwx-public</id>
-            <url>http://repo.hortonworks.com/content/groups/public/</url>
-        </repository>
-    </repositories>
+  <repositories>
+    <repository>
+      <id>cloudera</id>
+      <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    </repository>
+  </repositories>
 
     <dependencies>
 
