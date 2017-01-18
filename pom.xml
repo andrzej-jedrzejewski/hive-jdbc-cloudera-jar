@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kainos.hive</groupId>
-    <artifactId>hive-jdbc-cloudera</artifactId>
+    <groupId>veil.hdp.hive</groupId>
+    <artifactId>hive-jdbc-uber</artifactId>
     <packaging>jar</packaging>
     <version>2.5.3.0-37</version>
 
-    <name>Hive JDBC Cloudera jar</name>
-    <description>Hive JDBC Cloudera jar</description>
+    <name>Hive JDBC uber jar</name>
+    <description>Hive JDBC uber jar</description>
 
-     <properties>
+    <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,6 +27,7 @@
       <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
     </repository>
   </repositories>
+
 
     <dependencies>
 
@@ -54,10 +55,6 @@
                 <exclusion>
                     <groupId>log4j</groupId>
                     <artifactId>apache-log4j-extras</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.hive.shims</groupId>
-                    <artifactId>hive-shims-0.20S</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -108,6 +105,12 @@
             <version>${slf4j.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -123,13 +126,27 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>Harness</Main-Class>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
                                     <includes>
                                         <include>**/*.class</include>
+                                        <include>**/*-version-info.properties</include>
                                         <include>**/*.MF</include>
                                     </includes>
+                                </filter>
+                                <filter>
+                                    <artifact>org.apache.hadoop:hadoop-common</artifact>
+                                    <excludes>
+                                        <exclude>org/apache/hadoop/util/VersionInfo</exclude>
+                                    </excludes>
                                 </filter>
                             </filters>
                             <artifactSet>
@@ -137,7 +154,10 @@
                                     <include>com.google.guava:guava</include>
                                     <include>commons-codec:commons-codec</include>
                                     <include>commons-lang:commons-lang</include>
+                                    <include>commons-configuration:commons-configuration</include>
+                                    <include>commons-collections:commons-collections</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
+                                    <include>org.apache.hadoop:hadoop-auth</include>
                                     <include>org.apache.hive:hive-common</include>
                                     <include>org.apache.hive:hive-jdbc</include>
                                     <include>org.apache.hive:hive-metastore</include>
@@ -146,6 +166,7 @@
                                     <include>org.apache.httpcomponents:httpclient</include>
                                     <include>org.apache.httpcomponents:httpcore</include>
                                     <include>org.apache.thrift:libthrift</include>
+                                    <include>org.slf4j:slf4j-simple</include>
                                     <include>org.slf4j:slf4j-api</include>
                                     <include>org.slf4j:jcl-over-slf4j</include>
                                     <include>org.slf4j:log4j-over-slf4j</include>
